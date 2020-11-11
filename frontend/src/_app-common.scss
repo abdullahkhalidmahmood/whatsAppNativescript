@@ -1,0 +1,74 @@
+@import "~@nativescript/theme/core";
+@import "~@nativescript/theme/blue";
+
+// Place any CSS rules you want to apply on both iOS and Android here.
+// This is where the vast majority of your CSS code goes.
+
+// Font icon class
+.fab {
+    font-family: "Font Awesome 5 Brands", "fa-brands-400";
+    font-weight: 400;
+}
+
+.fas {
+    font-family: "Font Awesome 5 Free", "fa-solid-900";
+    font-weight: 900;
+}
+
+.far {
+    font-family: "Font Awesome 5 Free", "fa-regular-400";
+    font-weight: 400;
+}
+
+// Custom tabstrip item class
+.navigation__item {
+    &:active,
+    &:active Label {
+        @include colorize($contrasted-color: complementary background 20% 0%);
+    }
+}
+
+// Common page class
+.page__content {
+
+    &-icon,
+    &-placeholder {
+        color: const(grey);
+        font-size: 20;
+        vertical-align: center;
+        horizontal-align: center;
+    }
+
+    &-icon {
+        font-size: 72;
+        vertical-align: top;
+        margin-top: 20%;
+    }
+}
+
+
+// Action bar style
+.actionBar_label{
+    color: black;
+    font-weight: bold;
+    font-size: medium;
+}
+
+// Image for list 
+Image{
+    border-radius: 50%;
+    width: 180px;
+    height: 180px;
+}
+
+// Action bar color 
+.action-bar{
+    background-color: #075E54;
+}
+
+//ListView Text 
+.listText{
+    font-size: medium;
+    color: black;
+    font-weight: bold;
+}

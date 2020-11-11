@@ -1,0 +1,86 @@
+<!-- custom action bar  -->
+<ActionBar class="action-bar">
+
+    <!-- iOS action item for new chat (right) -->
+    <ActionItem ios.systemIcon="7" ios.position="right"></ActionItem>
+
+    <!-- iOS action item for Edit (left) -->
+    <ActionItem ios.systemIcon="2" ios.position="left" android:visibility="collapse"></ActionItem>
+
+    <!-- iOS action bar CHATS Label  -->
+    <StackLayout>
+        <label text="Chats" class="actionBar_label" android:visibility="collapse"></label>
+    </StackLayout>
+
+    <!-- Android action items for  popup list  -->
+    <ActionItem text="New group" android.position="popup" ios:visibility="collapse"></ActionItem>
+    <ActionItem text="New broadcast" android.position="popup" ios:visibility="collapse"></ActionItem>
+    <ActionItem text="WhatsApp Web" android.position="popup" ios:visibility="collapse"></ActionItem>
+    <ActionItem text="Starred messages" android.position="popup" ios:visibility="collapse"></ActionItem>
+    <ActionItem text="Settings" android.position="popup" ios:visibility="collapse"></ActionItem>
+    <ActionItem android.systemIcon="ic_search_category_default" android.position="right" ios:visibility="collapse">
+    </ActionItem>
+</ActionBar>
+
+
+<GridLayout>
+
+    <Tabs  
+    ios:visibility="collapse"
+    selectedIndex="1">
+        <TabStrip>
+            <TabStripItem>
+                <Image src="font://&#xf030;" class="fas t-36"></Image>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="CHATS"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="STATUS"></Label>
+            </TabStripItem>
+            <TabStripItem>
+                <Label text="CALLS"></Label>
+            </TabStripItem>
+        </TabStrip>
+       
+       
+        <TabContentItem>
+            <page-router-outlet name="browseTab"></page-router-outlet>
+        </TabContentItem>
+
+        <TabContentItem>
+            <ListView [items]="items">
+                <ng-template let-item="item">
+                    <StackLayout orientation = "horizontal">
+                        <Image [src]="item.image" class="profileImg" horizontalAlignment="left"></Image>
+                        <Label class="listText"  [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                        <!-- <Label [nsRouterLink]="['../item', item.id]" [text]="item.number"></Label> -->
+                    </StackLayout>
+                </ng-template>
+            </ListView>
+        </TabContentItem>
+
+
+        <TabContentItem>
+            <page-router-outlet name="searchTab"></page-router-outlet>
+        </TabContentItem>
+
+        <TabContentItem>
+            <page-router-outlet name="searchTab"></page-router-outlet>
+        </TabContentItem>
+
+    </Tabs>
+
+    
+    <ListView [items]="items">
+        <ng-template let-item="item">
+            <StackLayout orientation = "horizontal">
+                <Image [src]="item.image" class="profileImg" horizontalAlignment="left"></Image>
+                <Label  class="listText" [nsRouterLink]="['../item', item.id]" [text]="item.name"></Label>
+                <!-- <Label [nsRouterLink]="['../item', item.id]" [text]="item.number"></Label> -->
+            </StackLayout>
+        </ng-template>
+    </ListView>
+
+
+</GridLayout>

@@ -1,0 +1,46 @@
+<BottomNavigation id="bottomNav">
+    <TabStrip android:visibility="collapse" >
+        <TabStripItem class="navigation__item" >
+            <Label text="Status"></Label>
+            <Image src="font://&#xf0eb;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Calls"></Label>
+            <Image src="font://&#xf095;" class="far t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Camera"></Label>
+            <Image src="font://&#xf030;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Chats"></Label>
+            <Image src="font://	&#xf075;" class="fas t-36"></Image>
+        </TabStripItem>
+        <TabStripItem class="navigation__item">
+            <Label text="Settings"></Label>
+            <Image src="font://	&#xf085;" class="fas t-36"></Image>
+        </TabStripItem>
+
+    </TabStrip>
+
+    <TabContentItem>
+        <page-router-outlet name="homeTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="browseTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+
+    <TabContentItem>
+        <page-router-outlet name="searchTab"></page-router-outlet>
+    </TabContentItem>
+
+</BottomNavigation>
